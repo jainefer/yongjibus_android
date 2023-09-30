@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/Shuttle"
+        android:enabled="true"
+        android:icon="@drawable/person"
+        android:title="셔틀"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/GihuengStation"
+        android:enabled="true"
+        android:icon="@drawable/subway"
+        android:title="기흥역"
+        app:showAsAction="ifRoom"/>
+</menu>
