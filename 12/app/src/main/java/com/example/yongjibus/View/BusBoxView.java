@@ -61,11 +61,11 @@ public class BusBoxView extends Fragment {
                              Bundle savedInstanceState) {
 
         View v=inflater.inflate(R.layout.fragment_bus_box_view,container,false);
-        recyclerView=v.findViewById(R.id.recyclerView);
+
         busBoxVIewModel=new BusBoxViewModel();
         busBoxVIewModel.load(busNumber);
         recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
-        BusBoxViewItemAdapter busBoxViewItemAdapter=new BusBoxViewItemAdapter("50005","9"+"분남았습니다");
+
         recyclerView.setAdapter(busBoxViewItemAdapter);
 
 

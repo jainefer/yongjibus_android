@@ -1,6 +1,7 @@
 package com.example.yongjibus.Adapter;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,61 +16,55 @@ import com.example.yongjibus.R;
 import com.example.yongjibus.View.BusBoxView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BusBoxViewItemAdapter extends RecyclerView.Adapter<BusBoxViewItemAdapter.ViewHolder> {
-    private ArrayList<String> localDataSet;
-    private String busName;
-    private String busTime;
+   private ArrayList<BusBoxVIewItem> list;
 
-    private ArrayList<BusBoxVIewItem> busBoxVIewItemList = new ArrayList<BusBoxVIewItem>();
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        private ImageView iconImageView;
-        private TextView titleTextView;
-        private TextView timeView;
-        public ViewHolder(@NonNull View itemView){
-            super(itemView);
-            titleTextView = itemView.findViewById(R.id.title);
-            timeView=itemView.findViewById(R.id.time);
-            iconImageView=itemView.findViewById(R.id.icon);
-        }
-        public TextView getTitleTextView(){
-            return titleTextView;
-        }
-        public TextView getTimeView(){
-            return timeView;
-        }
-        public ImageView getIconImageView(){
-            return iconImageView;
 
-        }
+    public BusBoxViewItemAdapter(ArrayList<BusBoxVIewItem> list){
+        this.list=list;
     }
 
-    public BusBoxViewItemAdapter(String title,String time){
-        busName=title;
-        busTime=time;
-    }
+
 
     @NonNull
     @Override
     public BusBoxViewItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
         View view=LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.activity_bus_box_view_item,parent,false);
-        BusBoxViewItemAdapter.ViewHolder viewHolder = new BusBoxViewItemAdapter.ViewHolder(view);
+        ViewHolder viewHolder = new BusBoxViewItemAdapter.ViewHolder(view);
 
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull BusBoxViewItemAdapter.ViewHolder holder, int position){
+        holder.title.setText(list.get(position).getTitle());
+        holder.content.setText(list.get(position).getContent());
+        holder.icon.setImageResource(list.get(position).getIcon());
 
-        holder.titleTextView.setText(busName);
-        holder.timeView.setText(busTime);
     }
 
     @Override
     public int getItemCount(){
-        return localDataSet.size();
+        return (null !=list?list.size() :0);
     }
+
+
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+        TextView title,content;
+        ImageView icon;
+        public ViewHolder(@NonNull View itemView){
+            super(itemView);
+            title=(TextView) itemView.findViewById(R.id.title);
+            content=(TextView) itemView.findViewById(R.id.time);
+            icon=(ImageView) itemView.findViewById(R.id.icon);
+        }
+    }
+
+
+
 
 
 

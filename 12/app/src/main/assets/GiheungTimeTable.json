@@ -1,0 +1,102 @@
+{
+  "StationTimes" : [
+    {
+      "id": 1,
+      "startTime": "08:00",
+      "stationArrival": "08:15",
+      "schoolArrival": "08:30",
+      "runCount": 2
+    },
+    {
+      "id": 2,
+      "startTime": "08:05",
+      "stationArrival": "08:20",
+      "schoolArrival": "08:35",
+      "runCount": 3
+    },
+    {
+      "id": 3,
+      "startTime": "09:05",
+      "stationArrival": "09:15",
+      "schoolArrival": "09:30",
+      "runCount": 3
+    },
+    {
+      "id": 4,
+      "startTime": "09:10",
+      "stationArrival": "09:20",
+      "schoolArrival": "09:35",
+      "runCount": 2
+    },
+    {
+      "id": 5,
+      "startTime": "10:00",
+      "stationArrival": "10:15",
+      "schoolArrival": "13:30",
+      "runCount": 2
+    },
+    {
+      "id": 6,
+      "startTime": "10:05",
+      "stationArrival": "10:20",
+      "schoolArrival": "10:35",
+      "runCount": 3
+    },
+    {
+      "id": 7,
+      "startTime": "12:00",
+      "stationArrival": "12:15",
+      "schoolArrival": "12:30",
+      "runCount": 1
+    },
+    {
+      "id": 8,
+      "startTime": "13:00",
+      "stationArrival": "13:15",
+      "schoolArrival": "13:30",
+      "runCount": 1
+    },
+    {
+      "id": 9,
+      "startTime": "14:00",
+      "stationArrival": "14:15",
+      "schoolArrival": "14:30",
+      "runCount": 1
+    },
+    {
+      "id": 10,
+      "startTime": "15:15",
+      "stationArrival": "15:30",
+      "schoolArrival": "15:45",
+      "runCount": 2
+    },
+    {
+      "id": 11,
+      "startTime": "16:15",
+      "stationArrival": "16:30",
+      "schoolArrival": "16:45",
+      "runCount": 3
+    },
+    {
+      "id": 12,
+      "startTime": "17:15",
+      "stationArrival": "17:30",
+      "schoolArrival": "17:45",
+      "runCount": 4
+    },
+    {
+      "id": 13,
+      "startTime": "18:15",
+      "stationArrival": "18:30",
+      "schoolArrival": "18:45",
+      "runCount": 2
+    },
+    {
+      "id": 14,
+      "startTime": "19:15",
+      "stationArrival": "19:30",
+      "schoolArrival": "19:45",
+      "runCount": 1
+    }
+  ]
+}

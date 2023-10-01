@@ -4,11 +4,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.ShuttleScreen"
+    android:orientation="vertical"
     >
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
+    <TextView
+        android:text="명지대역"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bus_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/black"
+            android:text="순번"
+            android:textSize="15dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="25dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/black"
+            android:text="운행경로"
+            android:textSize="15dp"
+            android:layout_marginRight="50dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/black"
+            android:text="출발시각"
+            android:textSize="15dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="5dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/black"
+            android:text="경유시각"
+            android:textSize="15dp"
+            android:layout_marginHorizontal="20dp"></TextView>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shuttle_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="5dp"/>
     <!-- TODO: Update blank fragment layout -->
 
 </LinearLayout>
