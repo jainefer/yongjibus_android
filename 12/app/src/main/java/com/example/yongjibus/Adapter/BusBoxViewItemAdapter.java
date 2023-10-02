@@ -1,11 +1,8 @@
 package com.example.yongjibus.Adapter;
 
-import android.content.Context;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,10 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yongjibus.R;
-import com.example.yongjibus.View.BusBoxView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class BusBoxViewItemAdapter extends RecyclerView.Adapter<BusBoxViewItemAdapter.ViewHolder> {
    private ArrayList<BusBoxVIewItem> list;

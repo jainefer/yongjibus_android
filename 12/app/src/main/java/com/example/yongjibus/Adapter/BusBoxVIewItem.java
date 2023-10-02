@@ -1,14 +1,5 @@
 package com.example.yongjibus.Adapter;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-import com.example.yongjibus.R;
-import com.example.yongjibus.View.BusBoxView;
-
-import java.util.ArrayList;
-
 public class BusBoxVIewItem {
     private int iconDrawbalbe;
     private String contentStr;

@@ -54,14 +54,56 @@ public class ShuttleScreen extends Fragment {
     @Override
     public void onStart(){
         super.onStart();
+
+        BusBoxViewModel bw=new BusBoxViewModel(this.getActivity());
         //버스 어댑터 생성
         busDataList=new ArrayList<>();
         busAdapter=new BusBoxViewItemAdapter(busDataList);
-        for(int i=0;i<5;i++){
-            BusBoxVIewItem item=new BusBoxVIewItem("5001번",i+"분 남음",R.drawable.bus );
-            busDataList.add(0,item);
-            busAdapter.notifyDataSetChanged();
+//        for(int i=0;i<5;i++){
+//            BusBoxVIewItem item=new BusBoxVIewItem("5001번",i+"분 남음",R.drawable.bus );
+//            busDataList.add(0,item);
+//            busAdapter.notifyDataSetChanged();
+//        }
+        bw.load(BusNumber.one, new BusBoxViewModel.OnBusArrivalListener() {
+            @Override
+            public void onBusArrival(String arrivalTime) {
+                String arriveTime1=arrivalTime;
+                BusBoxVIewItem item=new BusBoxVIewItem("5001-1번",arriveTime1+"분 남음",R.drawable.bus );
+                busDataList.add(item);
+                busAdapter.notifyDataSetChanged();
+            }
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+        bw.load(BusNumber.three, new BusBoxViewModel.OnBusArrivalListener() {
+            @Override
+            public void onBusArrival(String arrivalTime) {
+                String arriveTime2=arrivalTime;
+                BusBoxVIewItem item=new BusBoxVIewItem("5003B번",arriveTime2+"분 남음",R.drawable.bus );
+                busDataList.add(item);
+                busAdapter.notifyDataSetChanged();
+            }
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        bw.load(BusNumber.zero, new BusBoxViewModel.OnBusArrivalListener() {
+            @Override
+            public void onBusArrival(String arrivalTime) {
+                String arriveTime3=arrivalTime;
+                BusBoxVIewItem item=new BusBoxVIewItem("5000B번",arriveTime3+"분 남음",R.drawable.bus );
+                busDataList.add(item);
+                busAdapter.notifyDataSetChanged();
+            }
+        });
+
+
         busRecyclerView.addItemDecoration(new ShuttleScreen.RecyclerViewDecoration(20));
         busLinearLayoutManager = new LinearLayoutManager(getActivity());
         busLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);

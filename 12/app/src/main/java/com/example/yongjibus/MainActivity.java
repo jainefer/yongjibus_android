@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-    BusBoxViewModel b=new BusBoxViewModel();
+
     ShuttleScreen shuttle;
     GihuengStationScreen gihuengStation;
 
