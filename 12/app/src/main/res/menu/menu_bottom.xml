@@ -5,7 +5,7 @@
         android:id="@+id/Shuttle"
         android:enabled="true"
         android:icon="@drawable/person"
-        android:title="셔틀"
+        android:title="명지대역"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/GihuengStation"

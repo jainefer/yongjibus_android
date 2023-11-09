@@ -66,52 +66,7 @@ public class BusBoxViewItemAdapter extends RecyclerView.Adapter<BusBoxViewItemAd
 
 
 
-    /*@Override
-    public int getCount() {
-        return busBoxVIewItemList.size();
-    }
 
-    @Override
-    public Object getItem(int position) {
-        return busBoxVIewItemList.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        final int pos = position;
-        final Context context = parent.getContext();
-        if(convertView == null){
-            LayoutInflater inflater = (LayoutInflater)
-                    context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView=inflater.inflate(R.layout.activity_bus_box_view_item,parent,false);
-        }
-
-        titleTextView=(TextView) convertView.findViewById(R.id.title);
-        iconImageView=(ImageView) convertView.findViewById(R.id.icon);
-        timeView=(TextView)convertView.findViewById(R.id.time);
-
-        BusBoxVIewItem busBoxVIewItem= busBoxVIewItemList.get(position);
-        titleTextView.setText(busBoxVIewItem.getTitle());
-        iconImageView.setImageResource(busBoxVIewItem.getIcon());
-        timeView.setText(busBoxVIewItem.getContent());
-
-        return convertView;
-    }
-    public void addItem(String title,int icon, String content){
-        BusBoxVIewItem item=new BusBoxVIewItem();
-
-        item.setTitle(title);
-        item.setIcon(icon);
-        item.setContent(content);
-
-        busBoxVIewItemList.add(item);
-    }
-        */
 
 
 }

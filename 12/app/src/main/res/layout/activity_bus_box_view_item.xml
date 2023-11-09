@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@drawable/radius"
+    android:background="@drawable/radius_bus"
 
     >
     <LinearLayout
@@ -17,11 +17,14 @@
         android:paddingBottom="25dp">
 
         <ImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/icon"
-            android:layout_width="41dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="10dp"
-            android:paddingTop="1dp"
+            android:background="@drawable/circle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:padding="2dp"
+            app:tint="#b4c3ff"
             android:src="@drawable/bus"></ImageView>
 
         <LinearLayout

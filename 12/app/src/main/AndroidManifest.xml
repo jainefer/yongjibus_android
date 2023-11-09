@@ -15,9 +15,7 @@
         tools:replace="android:appComponentFactory"
         android:enableOnBackInvokedCallback="true"
         tools:targetApi="33">
-        <activity
-            android:name=".Adapter.BusBoxVIewItem"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

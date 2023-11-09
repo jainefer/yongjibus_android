@@ -1,12 +1,16 @@
 package com.example.yongjibus.View;
 
+import android.app.Dialog;
+import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,6 +28,7 @@ import com.example.yongjibus.MainActivity;
 import com.example.yongjibus.Model.BusNumber;
 import com.example.yongjibus.ModelView.BusBoxViewModel;
 import com.example.yongjibus.ModelView.ShuttleTimeViewModel;
+import com.example.yongjibus.Progress.ProgressDialog;
 import com.example.yongjibus.R;
 
 import java.util.ArrayList;
@@ -37,13 +42,13 @@ public class ShuttleScreen extends Fragment {
     private RecyclerView busRecyclerView;
     private ArrayList<BusBoxVIewItem> busDataList;
     private BusBoxViewItemAdapter busAdapter;
-
+    private SwipeRefreshLayout swipe;
     //명지대역 셔틀 관련 변수
     private LinearLayoutManager shuttleLinearLayoutManager;
     private RecyclerView shuttleRecyclerView;
     private ArrayList<ShuttleViewItem> shuttleDataList;
     private ShuttleViewItemAdapter shuttleAdapter;
-
+    private ProgressDialog customProgressDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,7 +73,12 @@ public class ShuttleScreen extends Fragment {
             @Override
             public void onBusArrival(String arrivalTime) {
                 String arriveTime1=arrivalTime;
-                BusBoxVIewItem item=new BusBoxVIewItem("5001-1번",arriveTime1+"분 남음",R.drawable.bus );
+                if(Integer.parseInt(arriveTime1)>=60){
+                    int hour= Integer.parseInt(arriveTime1)/60;
+                    int min= Integer.parseInt(arriveTime1)%60;
+                    arriveTime1=hour+"시간 "+min;
+                }
+                BusBoxVIewItem item=new BusBoxVIewItem("5001-1",arriveTime1+"분 남음",R.drawable.bus );
                 busDataList.add(item);
                 busAdapter.notifyDataSetChanged();
             }
@@ -82,7 +92,12 @@ public class ShuttleScreen extends Fragment {
             @Override
             public void onBusArrival(String arrivalTime) {
                 String arriveTime2=arrivalTime;
-                BusBoxVIewItem item=new BusBoxVIewItem("5003B번",arriveTime2+"분 남음",R.drawable.bus );
+                if(Integer.parseInt(arriveTime2)>=60){
+                    int hour= Integer.parseInt(arriveTime2)/60;
+                    int min= Integer.parseInt(arriveTime2)%60;
+                    arriveTime2=hour+"시간 "+min;
+                }
+                BusBoxVIewItem item=new BusBoxVIewItem("5003B",arriveTime2+"분 남음",R.drawable.bus );
                 busDataList.add(item);
                 busAdapter.notifyDataSetChanged();
             }
@@ -97,7 +112,12 @@ public class ShuttleScreen extends Fragment {
             @Override
             public void onBusArrival(String arrivalTime) {
                 String arriveTime3=arrivalTime;
-                BusBoxVIewItem item=new BusBoxVIewItem("5000B번",arriveTime3+"분 남음",R.drawable.bus );
+                if(Integer.parseInt(arriveTime3)>=60){
+                    int hour= Integer.parseInt(arriveTime3)/60;
+                    int min= Integer.parseInt(arriveTime3)%60;
+                    arriveTime3=hour+"시간 "+min;
+                }
+                BusBoxVIewItem item=new BusBoxVIewItem("5000B",arriveTime3+"분 남음",R.drawable.bus );
                 busDataList.add(item);
                 busAdapter.notifyDataSetChanged();
             }
@@ -117,19 +137,14 @@ public class ShuttleScreen extends Fragment {
         shuttleAdapter=new ShuttleViewItemAdapter(shuttleDataList);
         shuttleAdapter.notifyDataSetChanged();
 
-//        for(int i=0;i<8;i++){
-//
-//            ShuttleViewItem item= new ShuttleViewItem(String.valueOf(i),"명지대역","00:00","00:00");
-//            shuttleDataList.add(0,item);
-//            shuttleAdapter.notifyDataSetChanged();
-//        }
         shuttleRecyclerView.addItemDecoration(new ShuttleScreen.RecyclerViewDecorationForHeight(20));
         shuttleLinearLayoutManager = new LinearLayoutManager(getActivity());
         shuttleLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         shuttleRecyclerView.setLayoutManager(shuttleLinearLayoutManager);
         shuttleRecyclerView.setAdapter(shuttleAdapter);
         shuttleRecyclerView.setHasFixedSize(false);
-        Log.e("로그", "onCreateView");
+
+
 
 
     }
@@ -141,26 +156,14 @@ public class ShuttleScreen extends Fragment {
         //진입로 빨버 관련
         busRecyclerView=(RecyclerView) view.findViewById(R.id.bus_recyclerView);
         busRecyclerView.setHasFixedSize(true);
+
+
         // 명지대역 셔틀 관련
         shuttleRecyclerView=(RecyclerView) view.findViewById(R.id.shuttle_recyclerView);
         shuttleRecyclerView.setHasFixedSize(true);
+
         return view;
 
-
-
-        /*this.busNumber=busNumber;
-
-        switch(busNumber){
-            case one:
-                this.title = "5001-1";
-                break;
-            case three:
-                this.title = "5003B";
-                break;
-            case zero:
-                this.title = "5000B";
-                break;
-        }*/
 
     }
     public class RecyclerViewDecoration extends RecyclerView.ItemDecoration {

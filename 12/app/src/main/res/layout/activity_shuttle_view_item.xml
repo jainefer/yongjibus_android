@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/radius"
+    android:background="@drawable/radius_timetable"
 
 
     >
@@ -16,7 +16,7 @@
         android:background="@drawable/circle"
         android:text="00"
         android:textSize="20dp"
-        android:textColor="@color/white"
+        android:textColor="#3183ff"
         android:layout_gravity="center"
         android:gravity="center"/>
     <TextView

@@ -26,6 +26,7 @@ public class BusBoxVIewItem {
     public String getContent(){
         return this.contentStr;
     }
+
     public  String getTitle(){
         return this.titleStr;
     }
