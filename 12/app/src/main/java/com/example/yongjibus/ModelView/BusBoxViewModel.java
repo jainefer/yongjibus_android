@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
 
+import com.example.yongjibus.BuildConfig;
 import com.example.yongjibus.Model.BusNumber;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -33,7 +34,7 @@ public class BusBoxViewModel {
         void onBusArrival(String arrivalTime);
     }
     String text="정보없음";
-    String key="WwT%2FuyuSGkPvsie3TDUXl%2BygKRkRCd8Dbc%2Fa8KiWC9YMaWnZaYLeViZeAYNpfoOO7kaQbdmQcou76Hmj7CSi%2Bw%3D%3D";
+    String key= BuildConfig.MY_KEY;
     String stationId = "228002023";
     private String routeId="";
     String result=null;

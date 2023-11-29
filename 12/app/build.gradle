@@ -1,7 +1,8 @@
 plugins {
     id 'com.android.application'
 }
-
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 android {
     namespace 'com.example.yongjibus'
     compileSdk 33
@@ -30,6 +31,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField "String", "MY_KEY", properties['my_api']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
