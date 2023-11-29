@@ -16,6 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class GihuengTimeViewModel {
+
     public static JSONArray loadJSONArrayFromAsset(Context context, String fileName) {
         JSONArray jsonArray = null;
         try {

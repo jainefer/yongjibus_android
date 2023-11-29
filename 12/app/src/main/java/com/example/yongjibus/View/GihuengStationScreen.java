@@ -7,17 +7,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.ImageView;
 
-import com.example.yongjibus.Adapter.BusBoxVIewItem;
-import com.example.yongjibus.Adapter.BusBoxViewItemAdapter;
 import com.example.yongjibus.Adapter.GihuengStationViewItem;
 import com.example.yongjibus.Adapter.GihuengStationViewItemAdapter;
-import com.example.yongjibus.Adapter.ShuttleViewItem;
-import com.example.yongjibus.Adapter.ShuttleViewItemAdapter;
 import com.example.yongjibus.ModelView.GihuengTimeViewModel;
 import com.example.yongjibus.R;
 
@@ -35,6 +32,8 @@ public class GihuengStationScreen extends Fragment {
     private ArrayList<GihuengStationViewItem> gsDataList;
     private GihuengStationViewItemAdapter gsAdapter;
 
+    private Setting setting_view;
+    private ImageView setting;
     @Override
     public void onStart(){
         super.onStart();
@@ -63,6 +62,21 @@ public class GihuengStationScreen extends Fragment {
         gsRecyclerView=(RecyclerView) view.findViewById(R.id.gihueng_recyclerView);
         gsRecyclerView.setHasFixedSize(true);
         // Inflate the layout for this fragment
+        //설정창
+//
+        setting=(ImageView)view.findViewById(R.id.gh_setting);
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setting_view = new Setting(getContext());
+                setting_view.show();
+
+            }
+        });
+
+
+
+
         return view;
     }
     public class RecyclerViewDecorationForHeight extends RecyclerView.ItemDecoration {

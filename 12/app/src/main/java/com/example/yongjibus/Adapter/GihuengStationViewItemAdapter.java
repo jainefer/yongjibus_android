@@ -30,7 +30,7 @@ public class GihuengStationViewItemAdapter extends RecyclerView.Adapter<GihuengS
 
     @Override
     public void onBindViewHolder(@NonNull GihuengStationViewItemAdapter.ViewHolder holder, int position) {
-        Log.e("2r",gsData.get(position).getGs_number());
+
         holder.gsNumber.setText(gsData.get(position).getGs_number());
         holder.gsStart.setText(gsData.get(position).getGs_start());
         holder.gsStopOver.setText(gsData.get(position).getGs_stopover());

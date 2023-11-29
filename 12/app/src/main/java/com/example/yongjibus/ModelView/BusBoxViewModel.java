@@ -105,6 +105,16 @@ public class BusBoxViewModel {
                                     }
                                 });
                             }
+                            else{
+                                ariveBus = "-1";
+                                String finalPredictTime = ariveBus;
+                                activity.runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        listener.onBusArrival(finalPredictTime);
+                                    }
+                                });
+                            }
                         }
                     } else {
                         // 오류 처리

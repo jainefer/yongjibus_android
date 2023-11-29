@@ -4,13 +4,13 @@
     <item
         android:id="@+id/Shuttle"
         android:enabled="true"
-        android:icon="@drawable/person"
+        android:icon="@drawable/m"
         android:title="명지대역"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/GihuengStation"
         android:enabled="true"
-        android:icon="@drawable/subway"
+        android:icon="@drawable/g"
         android:title="기흥역"
         app:showAsAction="ifRoom"/>
 </menu>
