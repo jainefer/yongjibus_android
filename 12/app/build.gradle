@@ -9,28 +9,28 @@ android {
     lintOptions {
         abortOnError false
     }
-    signingConfigs {
-
-        release {
-
-            storeFile file('bus.jks') // 기준은 App 폴더 기준이다.
-
-            storePassword "127521"
-
-            keyAlias "key0"
-
-            keyPassword "127521"
-
-        }
-
-    }
+//    signingConfigs {
+//
+//        release {
+//
+//            storeFile file('bus.jks') // 기준은 App 폴더 기준이다.
+//
+//            storePassword "127521"
+//
+//            keyAlias "key0"
+//
+//            keyPassword "127521"
+//
+//        }
+//
+//    }
     defaultConfig {
-        applicationId "com.example.yongjibus"
-        minSdk 33
+        applicationId "com.yongjibus.yongjibus"
+        minSdk 19
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
-
+        versionCode 4
+        versionName "1.3"
+        multiDexEnabled true
         buildConfigField "String", "MY_KEY", properties['my_api']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,7 +39,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
 
         }
     }
@@ -54,6 +54,7 @@ android {
 
 dependencies {
     //noinspection GradleCompatible
+    implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.android.support:design:28.0.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'

@@ -30,7 +30,7 @@
             android:name=".View.Setting"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.yongjibus.yongjibus.MainActivity"
 
             android:exported="true">
             <intent-filter>

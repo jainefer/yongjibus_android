@@ -7,10 +7,18 @@
         android:icon="@drawable/m"
         android:title="명지대역"
         app:showAsAction="ifRoom"/>
+
     <item
         android:id="@+id/GihuengStation"
         android:enabled="true"
         android:icon="@drawable/g"
         android:title="기흥역"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/Setting"
+        android:enabled="true"
+        android:icon="@drawable/s"
+        android:title="설정"
+        app:showAsAction="ifRoom"/>
+
 </menu>
