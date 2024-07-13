@@ -1,4 +1,4 @@
-package com.yongjibus.yongjibus.ModelView;
+package com.yongjibus.yongjibus.Model;
 
 
 
@@ -6,7 +6,6 @@ import android.app.Activity;
 
 
 import com.example.yongjibus.BuildConfig;
-import com.yongjibus.yongjibus.Model.BusNumber;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -19,7 +18,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 
-public class BusBoxViewModel {
+public class BusBoxModel {
 
     public interface OnBusArrivalListener {
         void onBusArrival(String arrivalTime);
@@ -32,7 +31,7 @@ public class BusBoxViewModel {
     String OriginalUrl="https://apis.data.go.kr/6410000/busarrivalservice/getBusArrivalItem";
     private String ariveBus;
     private Activity activity;
-    public BusBoxViewModel(Activity activity) {
+    public BusBoxModel(Activity activity) {
         this.activity = activity;
     }
     public void load(BusNumber route, OnBusArrivalListener listener){

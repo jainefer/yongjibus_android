@@ -22,7 +22,7 @@ import com.yongjibus.yongjibus.Adapter.ShuttleViewItem;
 import com.yongjibus.yongjibus.Adapter.ShuttleViewItemAdapter;
 import com.yongjibus.yongjibus.MainActivity;
 import com.yongjibus.yongjibus.Model.BusNumber;
-import com.yongjibus.yongjibus.ModelView.BusBoxViewModel;
+import com.yongjibus.yongjibus.Model.BusBoxModel;
 import com.yongjibus.yongjibus.ModelView.ShuttleTimeViewModel;
 import com.yongjibus.yongjibus.Progress.ProgressDialog;
 import com.example.yongjibus.R;
@@ -75,7 +75,7 @@ public class ShuttleScreen extends Fragment  {
     public void onResume() {
         super.onResume();
 
-        BusBoxViewModel bw=new BusBoxViewModel(this.getActivity());
+        BusBoxModel bw=new BusBoxModel(this.getActivity());
 
         customProgressDialog = new ProgressDialog(this.getContext());
         customProgressDialog.setCancelable(false); // 로딩창 주변 클릭 시 종료 막기
@@ -178,11 +178,11 @@ public class ShuttleScreen extends Fragment  {
 
 
     }
-    private void loadBus(BusBoxViewModel bw) throws InterruptedException {
+    private void loadBus(BusBoxModel bw) throws InterruptedException {
         loadedBusCount=0;
 
         // 첫 번째 버스 데이터 로딩
-        bw.load(BusNumber.one, new BusBoxViewModel.OnBusArrivalListener() {
+        bw.load(BusNumber.one, new BusBoxModel.OnBusArrivalListener() {
             @Override
             public void onBusArrival(String arrivalTime) {
 
@@ -202,7 +202,7 @@ public class ShuttleScreen extends Fragment  {
 //        });
         Thread.sleep(10);
         // 세 번째 버스 데이터 로딩
-        bw.load(BusNumber.zero, new BusBoxViewModel.OnBusArrivalListener() {
+        bw.load(BusNumber.zero, new BusBoxModel.OnBusArrivalListener() {
             @Override
             public void onBusArrival(String arrivalTime) {
 
@@ -247,7 +247,7 @@ public class ShuttleScreen extends Fragment  {
         busAdapter.notifyDataSetChanged();
         customProgressDialog.show();
 
-        BusBoxViewModel bw = new BusBoxViewModel(getActivity());
+        BusBoxModel bw = new BusBoxModel(getActivity());
         loadBus(bw);
         // 데이터 로딩이 완료되면 프로그레스 다이얼로그를 숨깁니다.
 
