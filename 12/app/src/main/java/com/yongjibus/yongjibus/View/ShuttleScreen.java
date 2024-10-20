@@ -187,19 +187,19 @@ public class ShuttleScreen extends Fragment  {
             public void onBusArrival(String arrivalTime) {
 
                 // 데이터 로딩 완료 후 처리
-                handleBusLoadingResult(arrivalTime, "5001-1");
+                handleBusLoadingResult(arrivalTime, "5001-1B");
             }
         });
         Thread.sleep(10);
         // 두 번째 버스 데이터 로딩
-//        bw.load(BusNumber.three, new BusBoxViewModel.OnBusArrivalListener() {
-//            @Override
-//            public void onBusArrival(String arrivalTime) {
-//
-//                // 데이터 로딩 완료 후 처리
-//                handleBusLoadingResult(arrivalTime, "5003B");
-//            }
-//        });
+        bw.load(BusNumber.three, new BusBoxModel.OnBusArrivalListener() {
+            @Override
+            public void onBusArrival(String arrivalTime) {
+
+                // 데이터 로딩 완료 후 처리
+                handleBusLoadingResult(arrivalTime, "5001-1A");
+            }
+        });
         Thread.sleep(10);
         // 세 번째 버스 데이터 로딩
         bw.load(BusNumber.zero, new BusBoxModel.OnBusArrivalListener() {

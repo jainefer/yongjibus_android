@@ -37,7 +37,7 @@ public class BusBoxModel {
     public void load(BusNumber route, OnBusArrivalListener listener){
         switch(route){
             case three:
-                routeId="228000182";
+                routeId="228000430";
                 break;
             case zero:
                 routeId="228000174";
