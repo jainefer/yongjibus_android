@@ -5,7 +5,7 @@ Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 android {
     namespace 'com.example.yongjibus'
-    compileSdk 34
+    compileSdk 36
     lintOptions {
         abortOnError false
     }
@@ -28,9 +28,9 @@ android {
         applicationId "com.yongjibus.yongjibus"
         minSdk 19
         //noinspection EditedTargetSdkVersion
-        targetSdk 34
-        versionCode 5
-        versionName "1.4"
+        targetSdk 36
+        versionCode 6
+        versionName "1.5"
         multiDexEnabled true
         buildConfigField "String", "MY_KEY", properties['my_api']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
